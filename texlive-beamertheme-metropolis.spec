@@ -1,6 +1,6 @@
 Name:		texlive-beamertheme-metropolis
 Version:	43031
-Release:	1
+Release:	2
 Summary:	A modern LaTeX beamer theme
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/beamertheme-metropolis
