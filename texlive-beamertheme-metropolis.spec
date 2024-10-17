@@ -3,7 +3,7 @@ Version:	43031
 Release:	2
 Summary:	A modern LaTeX beamer theme
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/beamertheme-metropolis
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamertheme-metropolis
 License:	other-free
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.doc.r%{version}.tar.xz
