@@ -1,40 +1,25 @@
-Name:		texlive-beamertheme-metropolis
-Version:	43031
-Release:	2
+%global tl_name beamertheme-metropolis
+%global tl_revision 78281
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.2
+Release:	%{tl_revision}.1
 Summary:	A modern LaTeX beamer theme
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamertheme-metropolis
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/beamer-contrib/themes/metropolis
 License:	other-free
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/beamertheme-metropolis.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(pgfopts)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a simple, modern Beamer theme for anyone
-to use. It tries to minimize noise and maximize space for
-content.
+The package provides a simple, modern Beamer theme for anyone to use. It
+tries to minimize noise and maximize space for content.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/beamertheme-metropolis
-%{_texmfdistdir}/tex/latex/beamertheme-metropolis
-%doc %{_texmfdistdir}/doc/latex/beamertheme-metropolis
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
